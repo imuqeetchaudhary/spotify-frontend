@@ -8,6 +8,7 @@ import NavbarComponent from "./Components/Navbar";
 import RegisterContainer from "./Containers/RegisterContainer";
 import LoginContainer from "./Containers/LoginContainer";
 import HomeContainer from "./Containers/HomeContainer";
+import CreateTrackContainer from "./Containers/CreateTrackContainer";
 
 function App() {
   const [auth, setAuth] = useState(false);
@@ -29,6 +30,7 @@ function App() {
             element={<RegisterContainer setAuth={setAuth} />}
           />
           <Route path="/login" element={<LoginContainer setAuth={setAuth} />} />
+          <Route path="/tracks/create" element={<CreateTrackContainer />} />
         </Routes>
       </Router>
     </div>

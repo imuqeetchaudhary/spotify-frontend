@@ -17,12 +17,13 @@ const NavbarComp = ({ auth }) => {
                 <Link to="/register">Register</Link>
                 <Link to="/login">Login</Link>
                 <Link to="/">Home</Link>
-                <Link to="/tracks">Tracks</Link>
+                <Link to="/tracks/all">All Tracks</Link>
               </>
             ) : (
               <>
                 <Link to="/">Home</Link>
-                <Link to="/tracks">Tracks</Link>
+                <Link to="/tracks/all">All Tracks</Link>
+                <Link to="/tracks/mine">My Tracks</Link>
                 <Link to="/tracks/create">Create Track</Link>
                 <Link
                   to="/login"

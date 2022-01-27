@@ -45,7 +45,7 @@ const RegisterContainer = ({ setAuth }) => {
 
       setAuth(true);
       toast(`${registerRes.data.message}`);
-      setTimeout(() => navigate("/"), 500);
+      navigate("/");
     } catch (err) {
       return toast(`${err.response.data.message}`);
     }

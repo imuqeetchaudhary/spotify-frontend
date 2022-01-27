@@ -36,7 +36,7 @@ const LoginContainer = ({ setAuth }) => {
 
       setAuth(true);
       toast(`Successfully logged in`);
-      setTimeout(() => navigate("/"), 500);
+      navigate("/");
     } catch (err) {
       return toast(`${err.response.data.message}`);
     }

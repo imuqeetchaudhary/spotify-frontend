@@ -6,6 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 import NavbarComponent from "./Components/Navbar";
 import RegisterContainer from "./Containers/RegisterContainer";
 import LoginContainer from "./Containers/LoginContainer";
+import HomeContainer from "./Containers/HomeContainer";
 
 function App() {
   return (
@@ -14,8 +15,9 @@ function App() {
         <NavbarComponent />
         <ToastContainer />
         <Routes>
-          <Route path="register" element={<RegisterContainer />} />
-          <Route path="login" element={<LoginContainer />} />
+          <Route path="/" element={<HomeContainer />} />
+          <Route path="/register" element={<RegisterContainer />} />
+          <Route path="/login" element={<LoginContainer />} />
         </Routes>
       </Router>
     </div>

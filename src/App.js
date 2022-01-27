@@ -3,8 +3,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import RegisterContainer from "./Containers/RegisterContainer";
 import NavbarComponent from "./Components/Navbar";
+import RegisterContainer from "./Containers/RegisterContainer";
+import LoginContainer from "./Containers/LoginContainer";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <ToastContainer />
         <Routes>
           <Route path="register" element={<RegisterContainer />} />
+          <Route path="login" element={<LoginContainer />} />
         </Routes>
       </Router>
     </div>

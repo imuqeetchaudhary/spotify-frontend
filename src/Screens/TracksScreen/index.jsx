@@ -4,15 +4,19 @@ import { CardGroup } from "react-bootstrap";
 import TrackCardComponent from "../../Components/TrackCardComponent";
 import img from "../../assets/images/track-cover.jpg";
 
-const TracksScreen = () => {
+const TracksScreen = ({ tracks }) => {
   return (
     <div>
       <CardGroup className="card-group">
-        <TrackCardComponent src={img} title={"Track 1"} />
-        <TrackCardComponent src={img} title={"Track 2"} />
-        <TrackCardComponent src={img} title={"Track 3"} />
-        <TrackCardComponent src={img} title={"Track 4"} />
-        <TrackCardComponent src={img} title={"Track 5"} />
+        {tracks.map((track) => {
+          return (
+            <TrackCardComponent
+              key={track._id}
+              src={img}
+              title={track.filename}
+            />
+          );
+        })}
       </CardGroup>
     </div>
   );

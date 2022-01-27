@@ -16,7 +16,7 @@ function App() {
   useEffect(() => {
     const token = localStorage.getItem("token");
     token && setAuth(true);
-  }, [auth]);
+  }, []);
 
   return (
     <div className="App">

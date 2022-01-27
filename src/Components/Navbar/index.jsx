@@ -3,7 +3,7 @@ import React from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-const NavbarComp = () => {
+const NavbarComp = ({ auth }) => {
   return (
     <>
       <Navbar fixed="top" bg="dark" variant="dark">
@@ -12,7 +12,7 @@ const NavbarComp = () => {
             <Link to="/">Spotify 🔊🔔🎙🎵</Link>
           </Navbar.Brand>
           <Nav className="nav-links">
-            {!localStorage.getItem("token") ? (
+            {!auth ? (
               <>
                 <Link to="/register">Register</Link>
                 <Link to="/login">Login</Link>

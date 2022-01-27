@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import { userLogin } from "../../api/user";
 
-const LoginContainer = () => {
+const LoginContainer = ({ setAuth }) => {
   const navigate = useNavigate();
 
   const [email, setEmail] = useState("");
@@ -34,6 +34,7 @@ const LoginContainer = () => {
       const token = res.data.token;
       localStorage.setItem("token", token);
 
+      setAuth(true);
       toast(`Successfully logged in`);
       setTimeout(() => navigate("/"), 500);
     } catch (err) {

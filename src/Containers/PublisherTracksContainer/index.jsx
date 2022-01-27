@@ -19,9 +19,15 @@ const PublisherTracksContainer = () => {
     fetchTracks();
   }, []);
 
+  const handleClick = () => {};
+
   return (
     <div>
-      <TracksScreen tracks={tracks} />
+      <TracksScreen
+        tracks={tracks}
+        handleClick={handleClick}
+        children={{ label: "Delete" }}
+      />
     </div>
   );
 };

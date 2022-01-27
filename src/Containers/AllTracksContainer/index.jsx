@@ -19,9 +19,15 @@ const AllTracksContainer = () => {
     fetchTracks();
   }, []);
 
+  const handleClick = () => {};
+
   return (
     <div>
-      <TracksScreen tracks={tracks} />
+      <TracksScreen
+        tracks={tracks}
+        handleClick={handleClick}
+        children={{ label: "Play" }}
+      />
     </div>
   );
 };

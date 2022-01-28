@@ -34,7 +34,7 @@ const TrackCardComponent = ({
         <Card.Img src={src} />
         <Card.Body>
           <Card.Title>{title}</Card.Title>
-          <audio controls>
+          <audio controls preload="auto">
             <source
               src={`http://localhost:8000/tracks/${id}`}
               type="audio/mp3"

@@ -9,10 +9,9 @@ const AllTracksContainer = () => {
     const fetchTracks = async () => {
       try {
         const res = await getAllTracks();
-        console.log(res);
         setTracks(res.data.trackFiles);
       } catch (err) {
-        console.log(err.response);
+        throw new Error(err);
       }
     };
 

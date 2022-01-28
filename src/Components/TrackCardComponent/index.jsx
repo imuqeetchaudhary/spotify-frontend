@@ -3,7 +3,7 @@ import React from "react";
 import { Card } from "react-bootstrap";
 import ButtonComponent from "../ButtonComponent";
 
-const TrackCardComponent = ({ src, title, children, handleClick }) => {
+const TrackCardComponent = ({ id, src, title, children, handleClick }) => {
   return (
     <div className="single-card">
       <Card>
@@ -12,7 +12,7 @@ const TrackCardComponent = ({ src, title, children, handleClick }) => {
           <Card.Title>{title}</Card.Title>
           <ButtonComponent
             children={{ label: children.label }}
-            handleClick={handleClick}
+            handleClick={(e) => handleClick(e, id)}
           />
         </Card.Body>
       </Card>

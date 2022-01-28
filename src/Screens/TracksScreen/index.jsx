@@ -12,6 +12,7 @@ const TracksScreen = ({ tracks, children, handleClick }) => {
           return (
             <TrackCardComponent
               key={track._id}
+              id={track._id}
               src={img}
               title={track.filename}
               handleClick={handleClick}

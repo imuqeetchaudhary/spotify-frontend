@@ -11,3 +11,7 @@ export const getAllTracks = () => {
 export const getAllMyPublishedTracks = () => {
   return api.get("tracks/for-publisher");
 };
+
+export const deleteTrack = (id) => {
+  return api.delete(`/tracks/${id}`);
+};

@@ -1,6 +1,9 @@
+import "./styles.css";
 import React, { useState, useEffect } from "react";
-import TracksScreen from "../../Screens/TracksScreen";
+import { CardGroup } from "react-bootstrap";
+import TrackCardComponent from "../../Components/TrackCardComponent";
 import { getAllTracks } from "../../api/track";
+import img from "../../assets/images/track-cover.jpg";
 
 const AllTracksContainer = () => {
   const [tracks, setTracks] = useState([]);
@@ -19,9 +22,19 @@ const AllTracksContainer = () => {
   }, []);
 
   return (
-    <div>
-      <TracksScreen tracks={tracks} />
-    </div>
+    <CardGroup className="card-group">
+      {tracks.map((track) => {
+        return (
+          <TrackCardComponent
+            tracks={tracks}
+            src={img}
+            id={track._id}
+            key={track._id}
+            title={track.filename}
+          />
+        );
+      })}
+    </CardGroup>
   );
 };
 

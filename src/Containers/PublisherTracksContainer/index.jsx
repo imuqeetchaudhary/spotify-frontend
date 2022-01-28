@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import TracksScreen from "../../Screens/TracksScreen";
-import { getAllMyPublishedTracks, deleteTrack } from "../../api/track";
-import { toast } from "react-toastify";
+import { getAllMyPublishedTracks } from "../../api/track";
 
 const PublisherTracksContainer = () => {
   const [tracks, setTracks] = useState([]);
@@ -19,27 +18,12 @@ const PublisherTracksContainer = () => {
     fetchTracks();
   }, []);
 
-  const handleDeleteClick = async (e, id) => {
-    e.preventDefault();
-
-    const tempTracks = [...tracks];
-
-    try {
-      setTracks(tracks.filter((track) => track._id !== id));
-      const res = await deleteTrack(id);
-      toast(`${res.data.message}`);
-    } catch (err) {
-      setTracks(tempTracks);
-      toast(`${err.response.data.message}`);
-    }
-  };
-
   return (
     <div>
       <TracksScreen
         tracks={tracks}
-        handleClick={handleDeleteClick}
-        children={{ label: "Delete" }}
+        setTracks={setTracks}
+        component={"delete"}
       />
     </div>
   );
